@@ -1,11 +1,10 @@
 {% extends 'base.html' %}
-{% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+{% load alog_filter %}
 {% block content %}
 <h1 class="detail-post-title">{{ blogpost.subject }}</h1>
 
 <div class="detail-post-content">
-    {{ blogpost.content }}
+    {{ blogpost.content|mark }}
 </div>
 
 <h5 class="detail-post-answer">{{ blogpost.answer_set.count }}개의 댓글이 있습니다.</h5>

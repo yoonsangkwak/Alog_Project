@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('alog/', include('alog.urls')),
     path('', base_views.index, name='index'),
+    path('common/', include('common.urls')),
 ]

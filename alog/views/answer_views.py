@@ -3,6 +3,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 
 from ..models import Blogpost, Answer
+from ..forms import AnswerForm
 
 def answer_create(request, blogpost_id):
     """
