@@ -1,0 +1,9 @@
+{% if post_list %}
+    <ul>
+    {% for blogpost in post_list %}
+        <li><a href="{% url 'alog:detail' blogpost.id %}">{{ blogpost.subject }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>게시된 글이 없습니다.</p>
+{% endif %}
