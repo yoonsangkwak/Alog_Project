@@ -1,22 +1,27 @@
+{% extends 'base.html' %}
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
-<h1>{{ blogpost.subject }}</h1>
+{% block content %}
+<h1 class="detail-post-title">{{ blogpost.subject }}</h1>
 
-<div>
+<div class="detail-post-content">
     {{ blogpost.content }}
 </div>
 
-<h5>{{ blogpost.answer_set.count }}개의 댓글이 있습니다.</h5>
+<h5 class="detail-post-answer">{{ blogpost.answer_set.count }}개의 댓글이 있습니다.</h5>
 <div>
-    <ul>
+    <ul class="detail-post-list">
     {% for answer in blogpost.answer_set.all %}
-        <li>{{ answer.content }}</li>
+        <li class="detail-post-item">{{ answer.content }}</li>
     {% endfor %}
     </ul>
 </div>
 
 <form action="{% url 'alog:answer_create' blogpost.id %}" method="POST">
 {% csrf_token %}
-<textarea name="content" id="content" rows="15"></textarea>
-<input type="submit" value="댓글등록">
+<div class="detail-submit-box">
+    <textarea name="content" id="content" rows="15"></textarea>
+    <input class="submit" type="submit" value="댓글등록">
+</div>
 </form>
+{% endblock %}

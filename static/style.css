@@ -1,11 +1,41 @@
 textarea {
-    width:100%;
+    width:80vh;
+    max-height: 5vh;
+    margin: 1rem;
 }
 
-input[type=submit] {
-    margin-top:10px;
+.detail-submit-box {
+    display: flex;
+    width: 100vh;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 1rem 1rem 1rem;
 }
 
-h5 {
-    color: blue;
+.submit {
+    height: 30px;
+}
+
+.detail-post-title {
+    margin: 1rem;
+    text-align: center;
+}
+
+.detail-post-content {
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.detail-post-answer {
+    margin: 1rem;
+}
+
+.detail-post-list {
+    margin: 1rem;
+    border: 1px solid blue;
+}
+
+.detail-post-item {
+    font-size: 0.8em;
+    margin: 0.5rem;
 }

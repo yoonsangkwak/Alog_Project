@@ -1,0 +1,31 @@
+{% load static %}
+<!doctype html>
+<html lang="ko">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Alog CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'default.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
+    <title>Alog</title>
+</head>
+<body>
+    <div class="page">
+        {% include 'navbar.html' %}
+        
+        <section class="section" id="section">
+            {% block content %}
+            {% endblock %}
+        </section>
+
+        <footer class="footer">
+            <div class="footer-content">
+                Copyright 2020 © Yoonsang
+            </div>
+        </footer>
+    </div>
+    <script src="{% static 'main.js' %}"></script>
+</body>
+</html>
