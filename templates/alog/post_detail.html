@@ -17,10 +17,20 @@
 </div>
 
 <form action="{% url 'alog:answer_create' blogpost.id %}" method="POST">
-{% csrf_token %}
-<div class="detail-submit-box">
-    <textarea name="content" id="content" rows="15"></textarea>
-    <input class="submit" type="submit" value="댓글등록">
-</div>
+    {% csrf_token %}
+    {% if form.errors %}
+    <div class="alert alert-danger" role="alert">
+    {% for field in form %}
+        {% if field.errors %}
+        <strong>{{ field.label }}</strong>
+        {{ field.errors }}
+        {% endif %}
+    {% endfor %}
+    </div>
+    {% endif %}
+    <div class="detail-submit-box">
+        <textarea name="content" id="content" rows="15"></textarea>
+        <input class="submit" type="submit" value="댓글등록">
+    </div>
 </form>
 {% endblock %}
