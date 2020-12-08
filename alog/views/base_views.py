@@ -10,7 +10,7 @@ def index(request):
     메인 첫 페이지
     """
     # page = request.GET.get('page', '1')
-    alog.info("INFO 레벨로 출력")
+    logger.info("INFO 레벨로 출력")
     post_list = Blogpost.objects.order_by('-create_date')
     context = {'post_list': post_list}
     return render(request, 'alog/post_list.html', context)
