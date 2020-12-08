@@ -184,5 +184,9 @@ LOGGING = {
             'level': 'INFO',
             'propagate': False,
         },
-    }
+        'alog': {
+            'handlers': ['console', 'file'],
+            'level': 'INFO',
+        },
+    },
 }
