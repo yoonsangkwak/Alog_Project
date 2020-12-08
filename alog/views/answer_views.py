@@ -1,10 +1,12 @@
 from django.contrib import messages
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
+from django.contrib.auth.decorators import login_required
 
 from ..models import Blogpost, Answer
 from ..forms import AnswerForm
 
+@login_required(login_url='common:login')
 def answer_create(request, blogpost_id):
     """
     댓글등록
@@ -14,6 +16,7 @@ def answer_create(request, blogpost_id):
         form = AnswerForm(request.POST)
         if form.is_valid():
             answer = form.save(commit=False)
+            answer.author = request.user
             answer.create_date = timezone.now()
             answer.blogpost = blogpost
             answer.save()

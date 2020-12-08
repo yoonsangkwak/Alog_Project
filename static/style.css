@@ -12,6 +12,23 @@ textarea {
     padding: 0 1rem 1rem 1rem;
 }
 
+.detail-submit-disabled {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 50vh; */
+    height: 40px;
+    /* padding: 0 1rem 1rem 1rem; */
+    margin: 1rem;
+    background-color: crimson;
+}
+
+.detail-to-login {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
 .submit {
     height: 30px;
 }
@@ -40,4 +57,8 @@ textarea {
 .detail-post-item {
     font-size: 0.8em;
     margin: 0.5rem;
+}
+
+.answer-username {
+    margin-right: 1rem;
 }

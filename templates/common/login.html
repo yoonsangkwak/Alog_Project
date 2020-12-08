@@ -1,4 +1,10 @@
 {% extends "base.html" %}
+<head> 
+    {% load static %}
+    {% block extrahead %}
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+    {% endblock %}
+</head>
 {% block content %}
 <div class="container my-3">
     <div class="row">
@@ -11,6 +17,7 @@
     </div>
     <form method="POST" class="post-form" action="{% url 'common:login' %}">
         {% csrf_token %}
+        <input type="hidden" name="text" value="{{ next }}">
         {% include "form_errors.html" %}
         <div class="form-group">
             <label for="username">사용자 ID</label>

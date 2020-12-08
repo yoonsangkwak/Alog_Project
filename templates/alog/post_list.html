@@ -4,14 +4,12 @@
     <ul class="card-list">
     {% for blogpost in post_list %}
         <li class="card-item">
-            <a href="{% url 'alog:detail' blogpost.id %}">
-                <figure class="card-image"></figure>
-                <div class="card-desc">
-                    <h2 class="post-title">{{ blogpost.subject }}</h2>
-                    <p class="date">{{ blogpost.create_date }}</p>
-                    <p class="writer">Yoonsang</p>
-                </div>
-            </a>
+            <figure class="card-image"></figure>
+            <div class="card-desc">
+                <a class="link post-title" href="{% url 'alog:detail' blogpost.id %}">{{ blogpost.subject }}</a>
+                <p class="date">{{ blogpost.create_date }}</p>
+                <p class="writer">YoonSang</p>
+            </div>
         </li>
     {% endfor %}
     </ul>

@@ -6,10 +6,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Alog CSS -->
-    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'default.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+    {% block extrahead %}
+    {% endblock %}
     <title>Alog</title>
 </head>
 <body>

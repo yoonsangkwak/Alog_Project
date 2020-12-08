@@ -1,4 +1,10 @@
 {% extends 'base.html' %}
+<head>
+    {% load static %}
+    {% block extrahead %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    {% endblock %}
+</head>
 {% load alog_filter %}
 {% block content %}
 <h1 class="detail-post-title">{{ blogpost.subject }}</h1>
@@ -11,7 +17,9 @@
 <div>
     <ul class="detail-post-list">
     {% for answer in blogpost.answer_set.all %}
-        <li class="detail-post-item">{{ answer.content }}</li>
+        <li class="detail-post-item">
+            <span class="answer-username">{{answer.author.username }}</span>{{ answer.content }}
+        </li>
     {% endfor %}
     </ul>
 </div>
@@ -28,9 +36,15 @@
     {% endfor %}
     </div>
     {% endif %}
+    {% if not user.is_authenticated %}
+    <div class="detail-submit-disabled">
+        <a class="detail-to-login" href="{% url 'common:login' %}">로그인 후 이용하세요</a>
+    </div>
+    {% else %}
     <div class="detail-submit-box">
         <textarea name="content" id="content" rows="15"></textarea>
         <input class="submit" type="submit" value="댓글등록">
     </div>
+    {% endif %}
 </form>
 {% endblock %}
