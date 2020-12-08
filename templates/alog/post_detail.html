@@ -17,8 +17,17 @@
 <div>
     <ul class="detail-post-list">
     {% for answer in blogpost.answer_set.all %}
+        <a name="answer_{{ answer.id }}"></a>
         <li class="detail-post-item">
             <span class="answer-username">{{answer.author.username }}</span>{{ answer.content }}
+            {% if request.user == answer.author %}
+            <span class="answer-modify">
+                <a href="{% url 'alog:answer_modify' answer.id %}" class="modify-link">수정</a>
+            </span>
+            <span class="answer-delete">
+                <a href="#" class="delete-link" data-uri="{% url 'alog:answer_delete' answer.id %}">삭제</a>
+            </span>
+            {% endif %}
         </li>
     {% endfor %}
     </ul>
@@ -47,4 +56,15 @@
     </div>
     {% endif %}
 </form>
+{% endblock %}
+{% block script %}
+<script type='text/javascript'>
+$(document).ready(function(){
+    $(".delete-link").on('click', function() {
+        if(confirm("정말로 삭제하시겠습니까?")) {
+            location.href = $(this).data('uri');
+        }
+    });
+});
+</script>
 {% endblock %}

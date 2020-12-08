@@ -55,10 +55,25 @@ textarea {
 }
 
 .detail-post-item {
-    font-size: 0.8em;
-    margin: 0.5rem;
+    display: flex;
+    font-size: 0.9em;
+    margin: 1.5rem 0;
 }
 
 .answer-username {
     margin-right: 1rem;
+}
+
+.answer-modify {
+    margin-left: auto;
+}
+
+.answer-delete {
+    margin-left: 1rem;
+}
+
+.modify-link,
+.delete-link {
+    text-decoration: none;
+    color: steelblue;
 }
