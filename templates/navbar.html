@@ -17,7 +17,7 @@
                 <a href="{% url 'alog:about' %}" class="link">ABOUT</a>
             </li>
             <li class="menu-item">
-                <a href="#" class="link">TAGS</a>
+                <a href="{% url 'alog:tags' %}" class="link">TAGS</a>
             </li>
             <li class="menu-item">
                 {% if user.is_authenticated %}

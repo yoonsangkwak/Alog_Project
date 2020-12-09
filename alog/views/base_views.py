@@ -30,3 +30,11 @@ def about(request):
     """
     context = {'about': about}
     return render(request, 'alog/about.html', context)
+
+
+def tags(request):
+    """
+    Tags 페이지
+    """
+    context = {'tags': tags}
+    return render(request, 'alog/tags.html', context)
