@@ -9,7 +9,6 @@ def index(request):
     """
     메인 첫 페이지
     """
-    # page = request.GET.get('page', '1')
     logger.info("INFO 레벨로 출력")
     post_list = Blogpost.objects.order_by('-create_date')
     context = {'post_list': post_list}
@@ -23,3 +22,11 @@ def detail(request, blogpost_id):
     blogpost = get_object_or_404(Blogpost, pk=blogpost_id)
     context = {'blogpost': blogpost}
     return render(request, 'alog/post_detail.html', context)
+
+
+def about(request):
+    """
+    About 페이지
+    """
+    context = {'about': about}
+    return render(request, 'alog/about.html', context)

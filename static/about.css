@@ -1,0 +1,21 @@
+.name-profile {
+    margin: 1rem;
+}
+
+.skill-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(220px, auto));
+	column-gap: 2%;
+    margin: 1rem;
+}
+
+.skill-item {
+    text-align: center;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border: 1px solid red;
+}
+
+.skill-title {
+    text-align: center;
+}

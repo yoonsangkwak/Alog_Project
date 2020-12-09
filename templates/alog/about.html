@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+<head>
+    {% block extrahead %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'about.css' %}">
+    {% endblock %}
+</head>
+{% block content %}
+<div class="name-profile">
+    <h2>FullStack Developer</h2>
+    <h3>Yoonsang 입니다.</h3>
+</div>
+
+<div class="skill-stack frontend">
+    <h3 class="skill-title">FrontEnd Skills</h3>
+    <ul class="skill-list">
+        <li class="skill-item">HTML</li>
+        <li class="skill-item">CSS</li>
+        <li class="skill-item">JavaScript</li>
+        <li class="skill-item">JQuery</li>
+        <li class="skill-item">React</li>
+    </ul>
+</div>
+
+<div class="skill-stack backend">
+    <h3 class="skill-title">BackEnd Skills</h3>
+    <ul class="skill-list">
+        <li class="skill-item">Django</li>
+        <li class="skill-item">Flask</li>
+        <li class="skill-item">Node.JS</li>
+    </ul>
+</div>
+
+<div class="skill-stack other">
+    <h3 class="skill-title">Other Skills</h3>
+    <ul class="skill-list">
+        <li class="skill-item">Python</li>
+        <li class="skill-item">Java</li>
+        <li class="skill-item">Flutter</li>
+        <li class="skill-item">Git</li>
+        <li class="skill-item">AWS</li>
+        <li class="skill-item">Firebase</li>
+    </ul>
+</div>
+{% endblock %}
