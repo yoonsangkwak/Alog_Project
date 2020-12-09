@@ -10,10 +10,22 @@
 }
 
 .skill-item {
-    text-align: center;
     margin: 0.5rem;
     padding: 0.5rem;
+    font-weight: bold;
+    text-align: center;
     border: 1px solid red;
+    border-radius: 10px;
+}
+.skill-level {
+    margin-top: 0.2em;
+    font-size: 0.7em;
+}
+
+.skill-item:hover {
+    background-color: steelblue;
+    color: white;
+    transition: 0.5s;
 }
 
 .skill-title {
