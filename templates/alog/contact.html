@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+<head>
+    {% block extrahead %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'contact.css' %}">
+    {% endblock %}
+</head>
+{% block content %}
+<div class="contact-title">
+    <h1>CONTACT</h1>
+</div>
+<div class="contact-content">
+    <div class="contact-item">
+        <div class="icon">
+            <img src="https://www.flaticon.com/svg/vstatic/svg/733/733609.svg?token=exp=1607604703~hmac=ea26425c1b1ca7bd5308bb5e23692cbe" alt="github">
+        </div>
+        <div class="contact-text">
+            <h3>Github</h3>
+            <a class="contact-link" href="https://github.com/yoonsangkwak">https://github.com/yoonsangkwak</a>
+        </div>
+    </div>
+    
+    <div class="contact-item">
+        <div class="icon">
+            <img src="https://www.flaticon.com/svg/vstatic/svg/482/482138.svg?token=exp=1607604416~hmac=df7ee73ff200e8bf1efb3d30b6968f6f" alt="email">
+        </div>
+        <div class="contact-text">
+            <h3>Email</h3>
+            <p class="contact-link">yunsag08@naver.com</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

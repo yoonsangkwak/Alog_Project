@@ -9,7 +9,7 @@ urlpatterns = [
     path('', base_views.index, name='index'),
     path('<int:blogpost_id>/', base_views.detail, name='detail'),
     path('about/', base_views.about, name='about'),
-    path('tags/', base_views.tags, name='tags'),
+    path('contact/', base_views.contact, name='contact'),
 
     # post_views.py
     path('post/create/', post_views.post_create, name='post_create'),
