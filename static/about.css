@@ -1,0 +1,54 @@
+.introduce-profile {
+    font-family: 'Spoqa Han Sans', sans-serif;
+    font-size: 1.1em;
+    font-weight: 100;
+    line-height: normal;
+}
+
+.name-profile {
+    margin: 1rem;
+}
+
+.name-profile h2 {
+    margin: 1rem;
+}
+
+.skill-stack {
+    margin: 4rem 0;
+}
+
+.skill-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(220px, auto));
+	column-gap: 2%;
+    margin: 1rem;
+}
+
+.skill-item {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid steelblue;
+    border-radius: 10px;
+}
+
+.skill-item-text,
+.skill-icon {
+    font-size: 1.5em;
+}
+
+.skill-level {
+    margin-top: 0.2em;
+    font-size: 0.7em;
+}
+
+.skill-item:hover {
+    background-color: steelblue;
+    color: white;
+    transition: 0.5s;
+}
+
+.skill-title {
+    text-align: center;
+}

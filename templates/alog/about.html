@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+<head>
+    {% block extrahead %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'about.css' %}">
+    {% endblock %}
+</head>
+{% block content %}
+<div class="name-profile">
+    <h2>FullStack Developer</h2>
+    <div class="introduce-profile">
+        <p>코딩으로 사이트를 만드는 매력에 푹 빠져 웹 개발을 공부하고 있습니다.</p>
+        <p>전공자는 아니지만 Matlab을 다루다가 코딩의 매력에 빠져서 Python으로 입문하였습니다.</p>
+        <p>새로운 기술스택을 늘리는데 흥미를 느끼며 배움에 적극적입니다.</p>
+        <br>
+        <p>이번 블로그를 통해 처음으로 웹 배포·유지보수까지 경험하였습니다.</p>
+        <p>프론트엔드와 백엔드 모두 관심을 가지고 실력을 늘리기 위해 노력하고 있습니다.</p>
+        <br>
+        <p>개발자 Yoonsang입니다.</p>
+    </div>
+</div>
+
+<div class="skill-stack frontend">
+    <h3 class="skill-title">FrontEnd Skills</h3>
+    <ul class="skill-list">
+        <li class="skill-item">
+            <div class="skill-item-text">HTML</div>
+            <div class="skill-level">Expert</div>
+        </li>
+        <li class="skill-item">
+            <div class="skill-item-text">CSS</div>
+            <div class="skill-level">Expert</div>
+        </li>
+        <li class="skill-item">
+            <div class="skill-item-text">JavaScript</div>
+            <div class="skill-level">Intermediate</div>
+        </li>
+        <li class="skill-item">
+            <div class="skill-item-text">JQuery</div>
+            <div class="skill-level">Intermediate</div>
+        </li>
+        <li class="skill-item">
+            <div class="skill-item-text">React</div>
+            <div class="skill-level">Beginner</div>
+        </li>
+    </ul>
+</div>
+
+<div class="skill-stack backend">
+    <h3 class="skill-title">BackEnd Skills</h3>
+    <ul class="skill-list">
+        <li class="skill-item">
+            <div class="skill-item-text">Django</div>
+            <div class="skill-level">Intermediate</div>
+        </li>
+        <li class="skill-item">
+            <div class="skill-item-text">Flask</div>
+            <div class="skill-level">Intermediate</div>
+        </li>
+        <li class="skill-item">
+            <div class="skill-item-text">Node.JS</div>
+            <div class="skill-level">Beginner</div>
+        </li>
+    </ul>
+</div>
+
+<div class="skill-stack other">
+    <h3 class="skill-title">Other Skills</h3>
+    <ul class="skill-list">
+        <li class="skill-item">
+            <div class="skill-item-text">Python</div>
+            <div class="skill-level">Expert</div>
+        </li>
+        <li class="skill-item">
+            <div class="skill-item-text">Java</div>
+            <div class="skill-level">Expert</div>
+        </li>
+        <li class="skill-item">
+            <div class="skill-item-text">Flutter</div>
+            <div class="skill-level">Intermediate</div>
+        </li>
+        <li class="skill-item">
+            <div class="skill-item-text">Git</div>
+            <div class="skill-level">Intermediate</div>
+        </li>
+        <li class="skill-item">
+            <div class="skill-item-text">AWS</div>
+            <div class="skill-level">Beginner</div>
+        </li>   
+        <li class="skill-item">
+            <div class="skill-item-text">Firebase</div>
+            <div class="skill-level">Beginner</div>
+        </li>
+    </ul>
+</div>
+
+<div class="skill-stack ide">
+    <h3 class="skill-title">Editors</h3>
+    <ul class="skill-list">
+        <li class="skill-item ide-item">VS CODE</li>
+        <li class="skill-item ide-item">Intelli J</li>
+        <li class="skill-item ide-item">Android Studio</li>
+    </ul>
+</div>
+{% endblock %}
