@@ -13,6 +13,13 @@
     {{ blogpost.content|mark }}
 </div>
 
+{% if user.is_superuser %}
+<div class="detail-post-status-btn">
+    <a class="post-status-btn" href="{% url 'alog:post_modify' blogpost.id %}">수정</a>
+    <a class="post-status-btn delete-link" href="#" data-uri="{% url 'alog:post_delete' blogpost.id %}">삭제</a>
+</div>
+{% endif %}
+
 <h5 class="detail-post-answer">{{ blogpost.answer_set.count }}개의 댓글이 있습니다.</h5>
 <div>
     <ul class="detail-post-list">

@@ -13,6 +13,11 @@
         </li>
     {% endfor %}
     </ul>
+    {% if user.is_superuser %}
+    <div class="goto-write">
+        <a class="goto-write-btn" href="{% url 'alog:post_create' %}">글쓰기</a>
+    </div>
+    {% endif %}
 {% else %}
     <p>게시된 글이 없습니다.</p>
 {% endif %}

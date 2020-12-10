@@ -159,6 +159,24 @@ html {
     font-size: 12px;
 }
 
+.goto-write {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.goto-write-btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 70px;
+	height: 30px;
+	text-decoration: none;
+	font-weight: bold;
+	color: white;
+	background-color: steelblue;
+	border-radius: 10px;
+}
+
 .footer {
 	padding: 1rem;
 	border-top: 1px solid lightgray;

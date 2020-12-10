@@ -33,6 +33,20 @@ textarea {
     height: 30px;
 }
 
+/* 블로그 글 관련 */
+
+.detail-post-status-btn {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.post-status-btn {
+    text-decoration: none;
+    margin: 0 0.5rem;
+    color: steelblue;
+    font-weight: bold;
+}
+
 .detail-post-title {
     margin: 1rem;
     text-align: center;
@@ -59,6 +73,8 @@ textarea {
     font-size: 0.9em;
     margin: 1.5rem 0;
 }
+
+/* 댓글관련 */
 
 .answer-username {
     margin-right: 1rem;
