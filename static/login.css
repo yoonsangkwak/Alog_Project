@@ -1,0 +1,17 @@
+.social-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-login-text {
+    color: #647586;
+    font-size: 1rem;
+    margin-right: auto;
+    font-weight: 100;
+    margin-bottom: 0;
+}
+
+.social-login-item {
+    margin: 0.5rem;
+}

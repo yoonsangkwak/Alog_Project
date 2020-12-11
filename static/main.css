@@ -92,7 +92,7 @@ html {
 
 .menu-item:hover {
 	width: 35%;
-	background-color: burlywood;
+	background-color: rgba(173, 216, 230, 1);
 }
 
 /* background image */

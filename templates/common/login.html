@@ -1,8 +1,10 @@
 {% extends "base.html" %}
+{% load socialaccount %}
 <head> 
     {% load static %}
     {% block extrahead %}
     <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'login.css' %}">
     {% endblock %}
 </head>
 {% block content %}
@@ -29,5 +31,17 @@
         </div>
         <button type="submit" class="btn btn-primary">로그인</button>
     </form>
+    <div class="social-login">
+        <p class="social-login-text">소셜 계정으로 간편 로그인하기</p>
+        <a class="social-login-item" href="{% provider_login_url 'google' method='oauth2' %}">
+            <img src="{% static 'google_login.png' %}" alt="google-login">
+        </a>
+        <a class="social-login-item" href="{% provider_login_url 'facebook' method='oauth2' %}">
+            <img src="{% static 'facebook_login.png' %}" alt="facebook-login">
+        </a>
+        <a class="social-login-item" href="{% provider_login_url 'naver' method='oauth2' %}">
+            <img src="{% static 'naver_login.png' %}" alt="naver-login">
+        </a>
+    </div>
 </div>
 {% endblock %}
