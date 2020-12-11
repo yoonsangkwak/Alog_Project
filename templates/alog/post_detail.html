@@ -26,7 +26,13 @@
     {% for answer in blogpost.answer_set.all %}
         <a name="answer_{{ answer.id }}"></a>
         <li class="detail-post-item">
-            <span class="answer-username">{{answer.author.username }}</span>{{ answer.content }}
+            <span class="answer-username">
+                {% if answer.author.username %}
+                {{ answer.author.username }}
+                {% else %}
+                {{ answer.author.first_name }}
+                {% endif %}
+            </span>{{ answer.content }}
             {% if request.user == answer.author %}
             <span class="answer-modify">
                 <a href="{% url 'alog:answer_modify' answer.id %}" class="modify-link">수정</a>
