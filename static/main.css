@@ -73,16 +73,13 @@ html {
 }
 
 .menu {
-	display: flex;
-	opacity: 0;
-	z-index: -1;
-	width: 100%;
-	transition: 0.5s;
+	display: none;
 }
 
 .menu.on {
-	opacity: 1;
-	z-index: 1;
+	display: flex;
+	width: 100%;
+	transition: 0.5s;
 }
 
 .menu-item {
@@ -126,22 +123,28 @@ html {
 .card-list {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(220px, auto));
-	column-gap: 2%;
+	column-gap: 4%;
     margin: 1rem;
 }
 .card-item {
     /* width: 250px; */
 	margin-bottom: 2rem;
-    background: white;
-    border: 1px solid red;
+    background: rgba(173, 216, 230, 0.2);
 }
 .card-image {
 	height: 0;
 	padding-bottom: 60%;
 	background-repeat: no-repeat;
 	background-position: center;
-	background-color: lightgray;
+	background-image: url(alog_img.png);
+	transform: scale(1);
+	transition: 0.4s;
 }
+
+.card-image:hover {
+	transform: scale(0.9);
+}
+
 .card-image img {
 	display: none;
 }
@@ -159,10 +162,31 @@ html {
     font-size: 12px;
 }
 
+.goto-write {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.goto-write-btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 70px;
+	height: 30px;
+	text-decoration: none;
+	font-weight: bold;
+	color: white;
+	background-color: steelblue;
+	border-radius: 10px;
+}
+
 .footer {
-	padding: 1rem;
-	border-top: 1px solid lightgray;
-	text-align: center;
+	min-height: 80px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #647586;
+	color: #b2bbc3;
 }
 
 @media (min-width: 1024px) {

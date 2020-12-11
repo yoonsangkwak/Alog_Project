@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+<head>
+    {% block extrahead %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'contact.css' %}">
+    {% endblock %}
+</head>
+{% block content %}
+<div class="contact-title">
+    <h1>CONTACT</h1>
+</div>
+<div class="contact-content">
+    <ul class="contact-list">
+        <li class="contact-item">
+            <div class="icon">
+                <img src="{% static 'github.svg' %}" alt="github">
+            </div>
+            <div class="contact-text">
+                <span class="contact-text-span">
+                    <h3 class="contact-text-span-title">Github</h3>
+                    <h5 class="contact-text-span-subtitle">yoonsangkwak</h5>
+                </span>
+                <a class="contact-link" href="https://github.com/yoonsangkwak">https://github.com/yoonsangkwak</a>
+            </div>
+        </li>
+        
+        <li class="contact-item">
+            <div class="icon">
+                <img src="{% static 'blog.svg' %}" alt="blog">
+            </div>
+            <div class="contact-text">
+                <span class="contact-text-span">
+                    <h3 class="contact-text-span-title">Blog</h3>
+                    <h5 class="contact-text-span-subtitle">초보개발러</h5>
+                </span>
+                <a class="contact-link" href="https://yoonsang-it.tistory.com/">https://yoonsang-it.tistory.com</a>
+            </div>
+        </li>
+        
+        <li class="contact-item">
+            <div class="icon">
+                <img src="{% static 'email.svg' %}" alt="email">
+            </div>
+            <div class="contact-text">
+                <h3>Email</h3>
+                <p class="contact-link">yunsag08@naver.com</p>
+            </div>
+        </li>
+    </ul>
+</div>
+{% endblock %}

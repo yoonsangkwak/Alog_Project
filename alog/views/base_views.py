@@ -32,9 +32,9 @@ def about(request):
     return render(request, 'alog/about.html', context)
 
 
-def tags(request):
+def contact(request):
     """
-    Tags 페이지
+    Contact 페이지
     """
-    context = {'tags': tags}
-    return render(request, 'alog/tags.html', context)
+    context = {'contact': contact}
+    return render(request, 'alog/contact.html', context)
