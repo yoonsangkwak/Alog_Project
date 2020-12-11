@@ -4,7 +4,7 @@
     <ul class="card-list">
     {% for blogpost in post_list %}
         <li class="card-item">
-            <figure class="card-image"></figure>
+            <a href="{% url 'alog:detail' blogpost.id %}"><figure class="card-image"></figure></a>
             <div class="card-desc">
                 <a class="link post-title" href="{% url 'alog:detail' blogpost.id %}">{{ blogpost.subject }}</a>
                 <p class="date">{{ blogpost.create_date }}</p>
