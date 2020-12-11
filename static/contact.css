@@ -1,15 +1,19 @@
 .contact-title {
-    margin: 1rem;
+    margin: 1rem 0;
 }
 
 .contact-content {
-    margin: 1rem;
-    padding: 1rem;
+    margin: 10px;
+}
+
+.contact-list {
+    margin: 1rem 0;
+    padding: 1rem 0;
 }
 
 .contact-item {
-    margin: 1rem;
-    padding: 1rem;
+    margin: 2rem 0;
+    padding: 1rem 0;
     display: flex;
 }
 
@@ -37,3 +41,15 @@
     font-weight: 100;
     margin-left: auto;
 }
+
+/* @media (max-width: 728px) {
+    .section {
+        width: 100vw;
+        padding: 0;
+        margin: 0;
+    }
+
+    .contact-item {
+        flex-direction: column;
+    }
+} */
