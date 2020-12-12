@@ -18,7 +18,7 @@ from django.urls import path, include
 from alog.views import base_views 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    # path('admin/', admin.site.urls),
     path('alog/', include('alog.urls')),
     path('', base_views.index, name='index'),
     path('common/', include('common.urls')),
