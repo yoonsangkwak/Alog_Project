@@ -136,7 +136,7 @@ html {
 	padding-bottom: 60%;
 	background-repeat: no-repeat;
 	background-position: center;
-	background-image: url(img/alog_img.png);
+	background-image: url('img/alog_img.png');
 	transform: scale(1);
 	transition: 0.4s;
 }
