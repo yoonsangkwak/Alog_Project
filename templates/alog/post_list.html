@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
 {% if post_list %}
+    <!-- <div class="search-item">
+        <input type="text" value="{{ kw|default_if_none:'' }}">
+        <button class="search-btn" type="button">찾기</button>
+    </div> -->
     <ul class="card-list">
     {% for blogpost in post_list %}
         <li class="card-item">
@@ -18,6 +22,40 @@
         <a class="goto-write-btn" href="{% url 'alog:post_create' %}">글쓰기</a>
     </div>
     {% endif %}
+    <!-- 페이징처리 시작 -->
+    <ul class="pagination justify-content-center">
+        <!-- 이전페이지 -->
+        {% if post_list.has_previous %}
+        <li class="page-item">
+            <a class="page-link" href="?page={{ post_list.previous_page_number }}">이전</a>
+        </li>
+        {% else %}
+        <li class="page-item disabled">
+            <a class="page-link" tabindex="-1" aria-disabled="true" href="#">이전</a>
+        </li>
+        {% endif %}
+        <!-- 페이지리스트 -->
+        {% for page_number in post_list.paginator.page_range %}
+        {% if page_number >= post_list.number|add:-5 and page_number <= post_list.number|add:5 %}
+            {% if page_number == post_list.number %}
+            <li class="page-item active" aria-current="page">
+                <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+            </li>
+            {% endif %}
+        {% endif %}
+        {% endfor %}
+        <!-- 다음페이지 -->
+        {% if post_list.has_next %}
+        <li class="page-item">
+            <a class="page-link" href="?page={{ post_list.next_page_number }}">다음</a>
+        </li>
+        {% else %}
+        <li class="page-item disabled">
+            <a class="page-link" tabindex="-1" aria-disabled="true" href="#">다음</a>
+        </li>
+        {% endif %}
+    </ul>
+    <!-- 페이징처리 끝 -->
 {% else %}
     <p>게시된 글이 없습니다.</p>
 {% endif %}
