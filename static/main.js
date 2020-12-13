@@ -1,6 +1,5 @@
 const menuBtn = document.querySelector('.menu-button');
 const menu = document.querySelector('.menu');
-// ​const section = document.querySelector('.section');
 const section = document.getElementById('section');
 const clientRect = section.getBoundingClientRect(); // DomRect 구하기 (각종 좌표값이 들어있는 객체)
 const relativeTop = clientRect.top; // Viewport의 시작지점을 기준으로한 상대좌표 Y 값.

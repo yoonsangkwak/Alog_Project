@@ -1,10 +1,15 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
 {% if post_list %}
-    <!-- <div class="search-item">
-        <input type="text" value="{{ kw|default_if_none:'' }}">
-        <button class="search-btn" type="button">찾기</button>
-    </div> -->
+    <div class="row justify-content-end my-3">
+        <div class="col-4 input-group">
+            <input type="text" class="form-control kw" value="{{ kw|default_if_none:'' }}">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" id="btn_search">찾기</button>
+            </div>
+        </div>
+    </div>
     <ul class="card-list">
     {% for blogpost in post_list %}
         <li class="card-item">
@@ -27,7 +32,7 @@
         <!-- 이전페이지 -->
         {% if post_list.has_previous %}
         <li class="page-item">
-            <a class="page-link" href="?page={{ post_list.previous_page_number }}">이전</a>
+            <a class="page-link" data-page="{{ post_list.previous_page_number }}" href="#">이전</a>
         </li>
         {% else %}
         <li class="page-item disabled">
@@ -39,7 +44,7 @@
         {% if page_number >= post_list.number|add:-5 and page_number <= post_list.number|add:5 %}
             {% if page_number == post_list.number %}
             <li class="page-item active" aria-current="page">
-                <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+                <a class="page-link" data-page="{{ page_number }}" href="#">{{ page_number }}</a>
             </li>
             {% endif %}
         {% endif %}
@@ -47,7 +52,7 @@
         <!-- 다음페이지 -->
         {% if post_list.has_next %}
         <li class="page-item">
-            <a class="page-link" href="?page={{ post_list.next_page_number }}">다음</a>
+            <a class="page-link" data-page="{{ page_number }}" href="#">다음</a>
         </li>
         {% else %}
         <li class="page-item disabled">
@@ -56,7 +61,27 @@
         {% endif %}
     </ul>
     <!-- 페이징처리 끝 -->
+    <form id="searchForm" method="get" action="{% url 'index' %}">
+        <input type="hidden" id="kw" name="kw" value="{{ kw|default_if_none:'' }}">
+        <input type="hidden" id="page" name="page" value="{{ page }}">
+    </form>
 {% else %}
     <p>게시된 글이 없습니다.</p>
 {% endif %}
+{% endblock %}
+{% block script %}
+<script type="text/javascript">
+$(document).ready(function() {
+    $(".page-link").on('click', function() {
+        $("#page").val($(this).data("page"));
+        $("#searchForm").submit();
+    });
+    
+    $("#btn_search").on('click', function() {
+        $("#kw").val($(".kw").val());
+        $("#page").val(1);  // 검색버튼을 클릭할 경우 1페이지부터 조회
+        $("#searchForm").submit();
+    });
+});
+</script>
 {% endblock %}
