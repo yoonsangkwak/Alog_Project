@@ -53,6 +53,7 @@ html {
 }
 
 .section {
+	/* overflow-x: hidden; */
 	padding: 0.5rem;
 	margin: 0.5rem;
 	box-sizing: border-box;

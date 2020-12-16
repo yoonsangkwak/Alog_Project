@@ -26,22 +26,41 @@
     {% for answer in blogpost.answer_set.all %}
         <a name="answer_{{ answer.id }}"></a>
         <li class="detail-post-item">
-            <span class="answer-username">
-                {% if answer.author.username %}
-                {{ answer.author.username }}
-                {% else %}
-                {{ answer.author.first_name }}
-                {% endif %}
-            </span>{{ answer.content }}
+            <span class="answer-username">{{ answer.author.username }}</span>
+            <span class="answer-content">{{ answer.content }}</span>
+            <span class="answer-text">
+                <a href="{% url 'alog:comment_create_answer' answer.id  %}" class="comment-link">댓글추가</a>
+            </span>
             {% if request.user == answer.author %}
-            <span class="answer-modify">
+            <span class="answer-text-right">
                 <a href="{% url 'alog:answer_modify' answer.id %}" class="modify-link">수정</a>
             </span>
-            <span class="answer-delete">
+            <span class="answer-text">
                 <a href="#" class="delete-link" data-uri="{% url 'alog:answer_delete' answer.id %}">삭제</a>
             </span>
             {% endif %}
         </li>
+        <!-- 대댓글 -->
+        {% if answer.comment_set.count > 0 %}
+            <div class="comment-list">
+            {% for comment in answer.comment_set.all %}
+                <a name="comment_{{ comment.id }}"></a>
+                <div class="comment-item">
+                    <span class="comment-author">↳ {{ comment.author }}</span>
+                    <span class="comment-content">{{ comment.content }}</span>
+                    <span class="comment-date answer-text-right">{{ comment.create_date }}</span>
+                    {% if request.user == comment.author %}
+                    <span class="answer-text">
+                        <a href="{% url 'alog:comment_modify_answer' comment.id  %}" class="modify-link">수정</a>
+                    </span>
+                    <span class="answer-text">
+                        <a href="#" class="delete-link" data-uri="{% url 'alog:comment_delete_answer' comment.id  %}">삭제</a>
+                    </span>
+                    {% endif %}
+                </div>
+            {% endfor %}
+            </div>
+            {% endif %}
     {% endfor %}
     </ul>
 </div>

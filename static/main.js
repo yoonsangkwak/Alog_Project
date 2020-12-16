@@ -25,4 +25,4 @@ function init() {
         searchDiv.classList.add('col-6');
     }
 }
-init();
+// init();

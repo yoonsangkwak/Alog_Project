@@ -1,5 +1,5 @@
 from django import forms
-from alog.models import Blogpost, Answer
+from alog.models import Blogpost, Answer, Comment
 
 class BlogpostForm(forms.ModelForm):
     class Meta:
@@ -13,6 +13,15 @@ class BlogpostForm(forms.ModelForm):
 class AnswerForm(forms.ModelForm):
     class Meta:
         model = Answer
+        fields = ['content']
+        labels = {
+            'content': '댓글내용',
+        }
+
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
         fields = ['content']
         labels = {
             'content': '댓글내용',

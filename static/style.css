@@ -70,7 +70,7 @@ textarea {
 
 .detail-post-item {
     display: flex;
-    font-size: 0.9em;
+    /* font-size: 0.9em; */
     margin: 1.5rem 0;
 }
 
@@ -78,18 +78,39 @@ textarea {
 
 .answer-username {
     margin-right: 1rem;
+    font-weight: bold;
 }
 
-.answer-modify {
+.answer-text-right {
     margin-left: auto;
 }
 
-.answer-delete {
+.answer-text {
     margin-left: 1rem;
 }
 
 .modify-link,
+.comment-link,
 .delete-link {
     text-decoration: none;
     color: steelblue;
+}
+
+.comment-list {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8em;
+    color: #666666;
+}
+
+.comment-item {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.comment-author {
+    margin-bottom: 0.5em;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-weight: bold;
 }
