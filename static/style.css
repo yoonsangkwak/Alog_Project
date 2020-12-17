@@ -1,5 +1,7 @@
-ol, ul, li {
-    list-style: disc !important;
+.section ol, 
+.section ul,
+.section li {
+    list-style: initial !important;
 }
 
 textarea {
