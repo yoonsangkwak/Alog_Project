@@ -122,7 +122,10 @@ TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
 
-USE_L10N = True
+# USE_L10N = True
+USE_L10N = False
+
+DATETIME_FORMAT = 'Y-m-d A h:i'
 
 USE_TZ = False
 
