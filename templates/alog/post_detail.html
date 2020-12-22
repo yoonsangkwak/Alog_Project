@@ -27,7 +27,7 @@
         <a name="answer_{{ answer.id }}"></a>
         <li class="detail-post-item">
             <span class="answer-username">{{ answer.author.username }}</span>
-            <span class="answer-content">{{ answer.content }}</span>
+            <span class="answer-content">{{ answer.content|mark }}</span>
             <span class="answer-text">
                 <a href="{% url 'alog:comment_create_answer' answer.id  %}" class="comment-link">댓글추가</a>
             </span>

@@ -4,6 +4,10 @@
     list-style: initial !important;
 }
 
+pre {
+    background: lavenderblush;
+}
+
 textarea {
     width:80vh;
     max-height: 5vh;
