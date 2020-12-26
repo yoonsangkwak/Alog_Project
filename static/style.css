@@ -2,10 +2,11 @@
 .section ul,
 .section li {
     list-style: initial !important;
+    margin-left: 1em;
 }
 
 pre {
-    background: lavenderblush;
+    background: aliceblue;
 }
 
 textarea {
