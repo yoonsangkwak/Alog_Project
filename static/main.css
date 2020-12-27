@@ -16,6 +16,10 @@ html {
 	margin-left: auto;
 }
 
+.menu-button:focus {
+	outline: none;
+}
+
 .line {
 	background: black;
 	width: 20px;
@@ -174,11 +178,17 @@ html {
 	align-items: center;
 	width: 70px;
 	height: 30px;
-	text-decoration: none;
 	font-weight: bold;
 	color: white;
 	background-color: steelblue;
 	border-radius: 10px;
+	transition: 0.3s;
+}
+
+.goto-write-btn:hover {
+	font-weight: bold;
+	color: white;
+	text-decoration: none;
 }
 
 .footer {
